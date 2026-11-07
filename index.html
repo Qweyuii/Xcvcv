@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HAKIM - تواصل وشارك أفكارك">
+  <title>HAKIM | تواصل مع الآخرين</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top"><div class="brand">HAKIM</div><span>مساحتك للتواصل والمشاركة</span></header>
+  <main>
+    <section id="auth" class="panel auth">
+      <div class="intro"><h1>مرحباً بك في HAKIM</h1><p>تواصل مع أصدقائك وشارك ما يدور في بالك.</p></div>
+      <div class="tabs">
+        <button class="tab active" data-mode="login">تسجيل الدخول</button>
+        <button class="tab" data-mode="register">إنشاء حساب</button>
+      </div>
+      <form id="authForm">
+        <label id="nameLabel" class="hidden">الاسم الكامل<input id="name" name="name" autocomplete="name" maxlength="50"></label>
+        <label>البريد الإلكتروني<input id="email" name="email" type="email" required autocomplete="email"></label>
+        <label>كلمة المرور<input id="password" name="password" type="password" required minlength="10" autocomplete="current-password"></label>
+        <p class="hint">استخدم كلمة مرور خاصة بهذا الموقع ولا تشاركها مع أي شخص.</p>
+        <button class="primary" id="submitAuth">تسجيل الدخول</button>
+      </form>
+      <p id="authMessage" class="message" role="status"></p>
+    </section>
+
+    <section id="feed" class="hidden">
+      <div class="welcome panel">
+        <div><h2>أهلاً <span id="displayName"></span> 👋</h2><p>هذه صفحتك الرئيسية في HAKIM.</p></div>
+        <button id="logout" class="secondary">تسجيل الخروج</button>
+      </div>
+      <form id="postForm" class="panel">
+        <label for="postBody">ماذا تريد أن تشارك؟</label>
+        <textarea id="postBody" maxlength="1000" rows="3" placeholder="اكتب منشورك هنا..." required></textarea>
+        <button class="primary">نشر</button>
+        <p id="postMessage" class="message" role="status"></p>
+      </form>
+      <div id="posts"></div>
+    </section>
+  </main>
+  <footer>HAKIM © <span id="year"></span> — منصة مستقلة غير تابعة لفيسبوك.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
